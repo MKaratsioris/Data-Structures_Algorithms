@@ -9,4 +9,7 @@
 - Shell sort
 - Selection sort
 - Djikstra's algorithm
-- 
+- Kruskal' algorithm
+- Prim's algorithm
+- A* algorithm
+- Backtracking algorithm

@@ -8,7 +8,8 @@
 
 - Tree: add - pre-order traversal, post-order traversal
 - Binary Tree (complete, full, perfect)
-- Binary Search Tree
+- B/B+ tree
+- AVL tree
 
 - Heaps
 - MinHeap
