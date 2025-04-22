@@ -1,4 +1,5 @@
-# TODO List
+# Data Structures TODO List
+- Add references in README.md for the scripts
 
 - Circular Linked List
 - Double Circular Linked List
