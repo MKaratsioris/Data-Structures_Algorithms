@@ -4,7 +4,6 @@
 - Create classes for algorithmic families like sort, search, encryption, etc.
 
 - Bubble sort
-- Quick sort
 - Insertion sort
 - Merge sort
 - Shell sort
