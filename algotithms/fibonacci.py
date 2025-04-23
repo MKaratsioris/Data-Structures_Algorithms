@@ -1,11 +1,30 @@
 from math import sqrt
+from functools import lru_cache
 
-def fibonacci_recursive(n: int) -> int:
+@lru_cache(maxsize=None)
+def fibonacci_recursive_memoization(n: int) -> int:
+    """_summary_
+
+    Parameters
+    ----------
+    n : int
+        _description_
+
+    Returns
+    -------
+    int
+        _description_
+    """
+    if n <= 1:
+        return n
+    return fibonacci_recursive_memoization(n - 1) + fibonacci_recursive_memoization(n - 2)
+
+def fibonacci_recursive_naive(n: int) -> int:
     """
     Calculates the n-th Fibonacci number recursively.
     
-    Time Complexity: O(logN)
-    Space Complexity: O(logN)
+    Time Complexity: O(2^n)
+    Space Complexity: O(n)
 
     Parameters
     ----------
@@ -17,11 +36,29 @@ def fibonacci_recursive(n: int) -> int:
     int
         N-th Fibonacci number
     """
-    if n == 0:
-        return 0
-    if n in (1, 2):
-        return 1
-    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+    if n <= 1:
+        return n
+    return fibonacci_recursive_naive(n - 1) + fibonacci_recursive_naive(n - 2)
+
+def fibonacci_iterative(n: int) -> int:
+    """_summary_
+
+    Parameters
+    ----------
+    n : _type_
+        _description_
+
+    Returns
+    -------
+    int
+        _description_
+    """
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
 
 def fibonacci_analytic(n: int) -> int:
     """
@@ -49,12 +86,18 @@ def fibonacci_analytic(n: int) -> int:
     return f_n
 
 if __name__ == '__main__':
-    print("Fibonacci Recursive")
-    for number in range(21):
-        print(f"Fibonacci number #{number}: {fibonacci_recursive(n=number)}")
-print("\nFibonacci Analytic")
-for number in range(10):
-    print(f"Fibonacci number #{number}: {fibonacci_analytic(n=number)}")
+    print("\nFibonacci Recursive Naive")
+    for number in range(10):
+        print(f"Fibonacci number #{number}: {fibonacci_recursive_naive(n=number)}")
+    print("\nFibonacci Recursive Memoization")
+    for number in range(10):
+        print(f"Fibonacci number #{number}: {fibonacci_recursive_memoization(n=number)}")
+    print("\nFibonacci Iterative")
+    for number in range(10):
+        print(f"Fibonacci number #{number}: {fibonacci_iterative(n=number)}")
+    print("\nFibonacci Analytic")
+    for number in range(10):
+        print(f"Fibonacci number #{number}: {fibonacci_analytic(n=number)}")
 #print("\nFibonacci Analytic - Negative")
 #for number in range(-9, 10):
 #    print(f"Fibonacci number #{number}: {fibonacci_analytic(n=number)}")

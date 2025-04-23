@@ -1,7 +1,39 @@
 from re import sub
 
-def factorial_recursion(number: int) -> int:
-    return 1 if number in (0, 1) else number * factorial_recursion(number - 1)
+def factorial_recursive(number: int) -> int:
+    """
+    Recursive factorial algorithm
+
+    Parameters
+    ----------
+    number : int
+        _description_
+
+    Returns
+    -------
+    int
+        _description_
+    """
+    return 1 if number in (0, 1) else number * factorial_recursive(number - 1)
+
+def factorial_iterative(number: int) -> int:
+    """
+    Iterative factorial algorithm
+
+    Parameters
+    ----------
+    number : int
+        _description_
+
+    Returns
+    -------
+    int
+        _description_
+    """
+    factorial = 1
+    for i in range(2, number + 1):
+        factorial *= i
+    return factorial
 
 def number_formatter(number: int) -> str:
     """
@@ -17,9 +49,16 @@ def number_formatter(number: int) -> str:
     return number_str[1:] if number_str[0] == ',' else number_str
 
 if __name__ == '__main__':
-    print("\n=========== FACTORIAL ===========")
+    print("\n=========== FACTORIAL RECURSIVE ===========")
     maximum: int = 20
     for number in range(maximum):
-        fact: int = factorial_recursion(number=number)
+        fact: int = factorial_recursive(number=number)
+        factorial: str = number_formatter(number=fact)
+        print(f"{number}! = {factorial}")
+    
+    print("\n=========== FACTORIAL ITERATIVE ===========")
+    maximum: int = 20
+    for number in range(maximum):
+        fact: int = factorial_iterative(number=number)
         factorial: str = number_formatter(number=fact)
         print(f"{number}! = {factorial}")
