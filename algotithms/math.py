@@ -72,9 +72,10 @@ def average(iterable: Iterable[int | float]) -> float:
     float
         _description_
     """
-    if not isinstance(number, (int, float)):
+    if len(iterable) == 0:
         return None
-    return summation(iterable=iterable) / len(iterable) if len(iterable) > 0 else None
+    total: int | float = summation(iterable=iterable)
+    return total / len(iterable) if isinstance(total, (int, float)) else None
 
 def median(sorted_iterable: Iterable[int | float]) -> int | float | None:
     """_summary_
@@ -92,9 +93,10 @@ def median(sorted_iterable: Iterable[int | float]) -> int | float | None:
     size: int = len(sorted_iterable)
     if not size:
         return None
-    if size % 2 == 1:
+    middle_elements: int | float = (sorted_iterable[(size // 2) - 1] + sorted_iterable[size // 2])
+    if size % 2 == 1 or not isinstance(middle_elements, (int, float)):
         return sorted_iterable[size // 2]
-    return (sorted_iterable[(size // 2) - 1] + sorted_iterable[size // 2]) / 2
+    return middle_elements / 2 if isinstance(middle_elements, (int, float)) else None
 
 if __name__ == '__main__':
     tests = [
