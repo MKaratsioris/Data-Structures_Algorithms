@@ -36,7 +36,7 @@ def bubble_sort(iterable: Iterable, key: Any = None) -> Iterable:
         if not swapped:
             return iterable
     return iterable
-    
+
 
 if __name__ == '__main__':
     print("\n------- int -------")
