@@ -16,15 +16,15 @@
 
 ## Searching
 
-| Algorithm | Best Time | Average Time | Worst Time | Space | Data Type | Notes |
-|:---------:|:---------:|:------------:|:----------:|:-----:|:---------:|:-----:|
-| Linear Search | O(1) | O(n) | O(n) | O(1) | Array/List | No need for sorting |
-| Binary Search | O(1) | O(log n) | O(log n) | O(1) or O(log n) | Sorted Array | Requires sorted data |
-| Jump Search | O(1) | O(√n) | O(√n) | O(1) | Sorted Array | Balance between linear & binary |
-| Ternary Search | O(1) | O(log₃ n) | O(log₃ n) | O(log n) | Sorted Array | Less efficient than binary in practice |
-| Exponential Search | O(1) | O(log n) | O(log n) | O(log n) | Sorted Array | Efficient for unbounded arrays |
-| Depth-First Search (DFS) | O(1) | O(V + E) | O(V + E) | O(V) | Graph/Tree | Recursive or using a stack |
-| Breadth-First Search (BFS) | O(1) | O(V + E) | O(V + E) | O(V) | Graph/Tree | Uses a queue, finds shortest path |
+|      Algorithm      | Best Time | Average Time | Worst Time |       Space       |   Data Type  |                  Notes                 |
+|:-------------------:|:---------:|:------------:|:----------:|:-----------------:|:------------:|:--------------------------------------:|
+| Linear              |    O(1)   |     O(n)     |    O(n)    |        O(1)       |  Array/List  | No need for sorting                    |
+| Binary              |    O(1)   |   O(log n)   |  O(log n)  |  O(1) or O(log n) | Sorted Array | Requires sorted data                   |
+| Jump                |    O(1)   |     O(√n)    |    O(√n)   |        O(1)       | Sorted Array | Balance between linear & binary        |
+| Ternary             |    O(1)   |   O(log₃ n)  |  O(log₃ n) |      O(log n)     | Sorted Array | Less efficient than binary in practice |
+| Exponential         |    O(1)   |   O(log n)   |   O(log n) |      O(log n)     | Sorted Array | Efficient for unbounded arrays         |
+| Depth-First (DFS)   |    O(1)   |   O(V + E)   |   O(V + E) |        O(V)       |  Graph/Tree  | Recursive or using a stack             |
+| Breadth-First (BFS) |    O(1)   |   O(V + E)   |   O(V + E) |        O(V)       |  Graph/Tree  | Uses a queue, finds shortest path      |
 
 NOTE: n = number of elements (array); V = vertices, E = edges (graph)
 
@@ -93,14 +93,15 @@ BFS starts from the root and visits every node of every tree level before going 
 
 ## Sorting
 
-| Algorithm | Best Time | Average Time | Worst Time | Space | In-place | Stable |
-|:---------:|:---------:|:------------:|:----------:|:-----:|:--------:|:------:|
-| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | ✅ | ✅ |
-| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) | ✅ | ❌ |
-| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | ✅ | ✅ |
-| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | ❌ | ✅ |
-| Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) | ✅ | ❌ |
-| Shell Sort | O(n log n)* | O(n log² n)* | O(n²)* | O(1) | ✅ | ❌ |
+|    Algorithm   |  Best Time | Average Time | Worst Time |   Space  | In-place | Stable |
+|:--------------:|:----------:|:------------:|:----------:|:--------:|:--------:|:------:|
+| Quick Sort     | O(n log n) |  O(n log n)  |    O(n²)   | O(log n) |    ✅    |   ❌   |
+| Insertion Sort |     O(n)   |     O(n²)    |    O(n²)   |   O(1)   |    ✅    |   ✅   |
+| Selection Sort |     O(n²)  |     O(n²)    |    O(n²)   |   O(1)   |    ✅    |   ❌   |
+| Bubble Sort    |     O(n)   |     O(n²)    |    O(n²)   |   O(1)   |    ✅    |   ✅   |
+| Merge Sort     | O(n log n) |  O(n log n)  | O(n log n) |   O(n)   |    ❌    |   ✅   |
+| Heap Sort      | O(n log n) |  O(n log n)  | O(n log n) |   O(1)   |    ✅    |   ❌   |
+| Shell Sort     | O(n log n) |  O(n log² n) |    O(n²)*  |   O(1)   |    ✅    |   ❌   |
 
 NOTE: Shell Sort complexities vary based on the gap sequence used.
 
